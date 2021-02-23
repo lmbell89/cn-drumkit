@@ -4,38 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
     <title>Drum Kit</title>
 </head>
 <body>
-
-    <button>
+    <button class="drumBtn">
         Crash
         <audio id="crash" src="./sounds/crash.wav"></audio>
     </button>
-    <button>
+    <button class="drumBtn">
         Hi Hat
         <audio id="hiHat" src="./sounds/hiHat.wav"></audio>
     </button>
-    <button>
+    <button class="drumBtn">
         Kick Drum
         <audio id="kick" src="./sounds/kick.wav"></audio>
     </button>
-    <button>
+    <button class="drumBtn">
         Snare Drum
         <audio id="snare" src="./sounds/snare.wav"></audio>
     </button>
-    <button>
+    <button class="drumBtn">
         High Tom Tom
         <audio id="tom1" src="./sounds/tom1.mp3"></audio>
     </button>
-    <button>
+    <button class="drumBtn">
         Low Tom Tom
         <audio id="tom2" src="./sounds/tom2.mp3"></audio>
     </button>
-    <button>
+    <button class="drumBtn">
         Floor Tom Tom
         <audio id="tom3" src="./sounds/tom3.mp3"></audio>
     </button>
+
+    <div id="song">
+        <div class="bar">
+            <div class="track">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="track">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+            </div>
+        </div>
+    </div>
+
+    <button id="playBtn">Play</button>
 
     <script src="./index.js"></script>
 </body>
