@@ -8,35 +8,326 @@
     <title>Drum Kit</title>
 </head>
 <body>
-    <button class="drumBtn">
-        Crash
-        <audio id="crash" src="./sounds/crash.wav"></audio>
-    </button>
-    <button class="drumBtn">
-        Hi Hat
-        <audio id="hiHat" src="./sounds/hiHat.wav"></audio>
-    </button>
-    <button class="drumBtn">
-        Kick Drum
-        <audio id="kick" src="./sounds/kick.wav"></audio>
-    </button>
-    <button class="drumBtn">
-        Snare Drum
-        <audio id="snare" src="./sounds/snare.wav"></audio>
-    </button>
-    <button class="drumBtn">
-        High Tom Tom
-        <audio id="tom1" src="./sounds/tom1.mp3"></audio>
-    </button>
-    <button class="drumBtn">
-        Low Tom Tom
-        <audio id="tom2" src="./sounds/tom2.mp3"></audio>
-    </button>
-    <button class="drumBtn">
-        Floor Tom Tom
-        <audio id="tom3" src="./sounds/tom3.mp3"></audio>
-    </button>
+    <div id="drumKit">
+        <button class="drumBtn">
+            Crash
+            <audio id="crash" src="./sounds/crash.wav" preload></audio>
+        </button>
+        <button class="drumBtn">
+            Hi Hat
+            <audio id="hiHat" src="./sounds/hiHat.wav" preload></audio>
+        </button>
+        <button class="drumBtn">
+            Kick Drum
+            <audio id="kick" src="./sounds/kick.wav" preload></audio>
+        </button>
+        <button class="drumBtn">
+            Snare Drum
+            <audio id="snare" src="./sounds/snare.wav" preload></audio>
+        </button>
+        <button class="drumBtn">
+            High Tom Tom
+            <audio id="tom1" src="./sounds/tom1.mp3" preload></audio>
+        </button>
+        <button class="drumBtn">
+            Low Tom Tom
+            <audio id="tom2" src="./sounds/tom2.mp3" preload></audio>
+        </button>
+        <button class="drumBtn">
+            Floor Tom Tom
+            <audio id="tom3" src="./sounds/tom3.mp3" preload></audio>
+        </button>
+    </div>
 
+    <button id="addBar">Add Bar</button>
+    <button id="addTrack">Add Track</button>
+    <button id="playBtn">Play Song</button>
+
+    <div id="song">
+        <div class="bar">
+            <button data-index="0">Delete Bar</button>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text" value="k">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text" value="s">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+        </div>
+        <div class="bar">
+            <button data-index="1">Delete Bar</button>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text" value="k">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text" value="k">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text" value="s">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+        </div>
+        <div class="bar">
+            <button data-index="2">Delete Bar</button>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text" value="k">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text" value="s">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+        </div>
+        <div class="bar">
+            <button data-index="3">Delete Bar</button>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text" value="k">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text" value="k">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text" value="s">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+        </div>
+        <div class="bar">
+            <button data-index="4">Delete Bar</button>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text" value="k">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text" value="s">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+        </div>
+        <div class="bar">
+            <button data-index="5">Delete Bar</button>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text" value="k">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text" value="k">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text" value="s">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="h">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+        </div>
+        <div class="bar">
+            <button data-index="6">Delete Bar</button>
+            <div class="beat">
+                <input type="text" value="s">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="s">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="s">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="s">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="t1">
+                <input type="text" value="">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="t1">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+        </div>
+        <div class="bar">
+            <button data-index="7">Delete Bar</button>
+            <div class="beat">
+                <input type="text" value="t2">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="t2">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="t2">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="t2">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="t3">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text" value="t3">
+                <input type="text">
+            </div>
+            <div class="beat">
+                <input type="text">
+                <input type="text">
+            </div>
+        </div>
+    </div>
+
+
+    <!--
     <div id="song">
         <div class="bar">
             <div class="track">
@@ -61,8 +352,7 @@
             </div>
         </div>
     </div>
-
-    <button id="playBtn">Play</button>
+    -->
 
     <script src="./index.js"></script>
 </body>

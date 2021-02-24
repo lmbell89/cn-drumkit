@@ -5,7 +5,6 @@ const snare = document.getElementById("snare")
 const tom1 = document.getElementById("tom1")
 const tom2 = document.getElementById("tom2")
 const tom3 = document.getElementById("tom3")
-const play = document.getElementById("playBtn")
 
 const drums = {
     h: hiHat,
@@ -18,13 +17,9 @@ const drums = {
 }
 
 const BEATS_PER_BAR = 8
-let beatsPerMinute = 240
 
-document.querySelectorAll(".drumBtn").forEach(button => {
-    button.addEventListener("click", function(){ playSound(this.children[0])})
-})
-
-
+let beatsPerMinute = 1000
+let trackCount = 2;
 
 
 const playSound = (audio) => {    
@@ -34,47 +29,76 @@ const playSound = (audio) => {
     audio.play()
 }
 
-
-
-
-
-
-
-
-const getBeats = () => {
-    let beats = []
-
-    document.querySelectorAll(".bar").forEach((bar, i) => {
-        bar.querySelectorAll(".track").forEach((track, j) => {
-            track.querySelectorAll("input").forEach((input, k) => {
-                if (j === 0) {
-                    beats.push([])
-                }
-
-                if (input.value in drums) {
-                    const index = i * (BEATS_PER_BAR - 1) + k
-                    beats[index].push(drums[input.value])
-                }                
-            })
-        })
-    })
-
-    return beats
-}
-
-const playSong = () => {
-    const beats = getBeats()
-
-    const playBeat = (beats, index) => {
-        if (index >= beats.length) {
-            return
-        }
-
-        beats[index].forEach(audio => playSound(audio))
-        setTimeout(() => playBeat(beats, index + 1), (2000 * 60 / beatsPerMinute))
+const playBeatsRecursive = (beats, index) => {
+    if (index >= beats.length) {
+        return
     }
 
-    playBeat(beats, 0)
+    beats[index].forEach(audio => playSound(audio))
+    setTimeout(() => playBeatsRecursive(beats, index + 1), (2000 * 60 / beatsPerMinute))
 }
 
-play.addEventListener("click", () => playSong())
+
+const playSong = () => {
+    let beats = []
+
+    document.querySelectorAll(".beat").forEach(beat => {
+        beats.push([])
+
+        for (let child of beat.children) {
+            if (child.value in drums) {
+                beats[beats.length - 1].push(drums[child.value])
+            }
+        }
+    })
+
+    playBeatsRecursive(beats, 0)
+}
+
+const addBar = () => {
+    const bar = document.createElement("div")
+    const deleteBtn = document.createElement("button")
+    const barCount = document.querySelectorAll(".bar").length
+ 
+    deleteBtn.setAttribute("data-index", barCount)
+    deleteBtn.addEventListener("click", () => deleteBar(barCount))
+    deleteBtn.innerHTML = "Delete Bar"
+
+    bar.className = "bar"
+    bar.appendChild(deleteBtn)
+
+    for (let i = 0; i < BEATS_PER_BAR; i++) {
+        const beat = document.createElement("div")
+        beat.className = "beat"
+        bar.appendChild(beat)
+
+        for (let j = 0; j < trackCount; j++) {
+            const track = document.createElement("input")
+            track.type = "text"
+            beat.appendChild(track)
+        }
+    }
+
+    document.getElementById("song").appendChild(bar)
+}
+
+const addTrack = () => {
+    document.querySelectorAll(".beat").forEach(beat => {
+        const track = document.createElement("input")
+        track.type = "text"
+        beat.appendChild(track)
+    })
+}
+
+deleteBar = (barIndex) => {
+    document.querySelector(`.bar:nth-child(${barIndex + 1})`).remove()
+}
+
+
+document.querySelectorAll(".drumBtn").forEach(button => {
+    button.addEventListener("click", function(){ playSound(this.children[0])})
+})
+
+document.getElementById("addBar").addEventListener("click", () => addBar())
+document.getElementById("addTrack").addEventListener("click", () => addTrack())
+document.getElementById("playBtn").addEventListener("click", () => playSong())
