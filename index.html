@@ -4,361 +4,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="./drumKit.css">
+    <link rel="icon" href="./img/drums.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/drumKit.css">
     <title>Drum Kit</title>
 </head>
 <body>
+    <h1>Interactive Drums</h1>
+
     <div id="drumKit">
-        <button class="drumBtn crash cymbol">            
+        <button class="crash cymbol">      
             <audio id="crash" src="./sounds/crash.wav" preload></audio>
             <div></div>
         </button>
-        <button class="drumBtn hiHat cymbol">            
+        <button class="hiHat cymbol">            
             <audio id="hiHat" src="./sounds/hiHat.wav" preload></audio>
             <div></div>
         </button>
-        <button class="drumBtn ride cymbol">
+        <button class="ride cymbol">
+            <audio id="hiHat" src="./sounds/ride.wav" preload></audio>
             <div></div>
-            Ride
         </button>
-        <button class="drumBtn kick">
-            Kick Drum
+        <button class="kick">
             <audio id="kick" src="./sounds/kick.wav" preload></audio>
         </button>
-        <button class="drumBtn snare upright">
-            Snare Drum
+        <button class="snare upright">
             <audio id="snare" src="./sounds/snare.wav" preload></audio>
         </button>
-        <button class="drumBtn tom1 upright">
-            High Tom Tom
-            <audio id="tom1" src="./sounds/tom1.mp3" preload></audio>
+        <button class="tom upright">
+            <audio id="tom" src="./sounds/tom.mp3" preload></audio>
         </button>
-        <button class="drumBtn tom2 upright">
-            Low Tom Tom
-            <audio id="tom2" src="./sounds/tom2.mp3" preload></audio>
+        <button class="mid upright">
+            <audio id="mid" src="./sounds/mid.mp3" preload></audio>
         </button>
-        <button class="drumBtn tom3 upright">
-            Floor Tom Tom
-            <audio id="tom3" src="./sounds/tom3.mp3" preload></audio>
+        <button class="floor upright">
+            <audio id="floor" src="./sounds/floor.mp3" preload></audio>
         </button>
     </div>
 
-    <button id="addBar">Add Bar</button>
-    <button id="addTrack">Add Track</button>
-    <button id="playBtn">Play Song</button>
+    <div id="drumBtns">
+        <div>
+            <button data-drum="crash">Crash <br>[C]</button>
+            <button data-drum="hiHat">Hi Hat <br>[H]</button>
+            <button data-drum="ride">Ride <br>[R]</button>
+            <button data-drum="kick">Kick Drum <br>[K]</button>
+        </div>
+        <div>
+            <button data-drum="snare">Snare <br>[S]</button>
+            <button data-drum="tom">High Tom <br>[T]</button>
+            <button data-drum="mid">Mid Tom <br>[M]</button>
+            <button data-drum="floor">Floor Tom <br>[F]</button>
+        </div>
+    </div>
+
+    <h2>Compose</h2>
+
+    <div id="controls">
+        <button id="addGroup">
+            <img src="img/add.png" alt="add">
+            <span>
+                Add<br>Group
+            </span>
+        </button>
+        <button id="playBtn">
+            <img src="img/play.png" alt="add">
+            <span>
+                Play<br>Song
+            </span>
+        </button>
+    </div>    
 
     <div id="song">
-        <div class="bar">
-            <button data-index="0">Delete Bar</button>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text" value="k">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text" value="s">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
+        <div class="group">
+            <input type="text" class="track" maxlength="16" spellcheck="false" value="h.h.h.h.h.h.h.h.">
+            <input type="text" class="track" maxlength="16" spellcheck="false" value="k...s...k.k.s...">
         </div>
-        <div class="bar">
-            <button data-index="1">Delete Bar</button>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text" value="k">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text" value="k">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text" value="s">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-        </div>
-        <div class="bar">
-            <button data-index="2">Delete Bar</button>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text" value="k">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text" value="s">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-        </div>
-        <div class="bar">
-            <button data-index="3">Delete Bar</button>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text" value="k">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text" value="k">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text" value="s">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-        </div>
-        <div class="bar">
-            <button data-index="4">Delete Bar</button>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text" value="k">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text" value="s">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-        </div>
-        <div class="bar">
-            <button data-index="5">Delete Bar</button>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text" value="k">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text" value="k">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text" value="s">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="h">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-        </div>
-        <div class="bar">
-            <button data-index="6">Delete Bar</button>
-            <div class="beat">
-                <input type="text" value="s">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="s">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="s">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="s">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="t1">
-                <input type="text" value="">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="t1">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-        </div>
-        <div class="bar">
-            <button data-index="7">Delete Bar</button>
-            <div class="beat">
-                <input type="text" value="t2">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="t2">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="t2">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="t2">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="t3">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text" value="t3">
-                <input type="text">
-            </div>
-            <div class="beat">
-                <input type="text">
-                <input type="text">
-            </div>
+        <div class="group">
+            <input type="text" class="track" maxlength="16" spellcheck="false" value="h.h.h.h.h.h.h.h.">
+            <input type="text" class="track" maxlength="16" spellcheck="false" value="k...s...k.k.s...">
         </div>
     </div>
 
+    <div>Icons made by <a href="https://www.flaticon.com/authors/prettycons" title="prettycons">prettycons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
-    <!--
-    <div id="song">
-        <div class="bar">
-            <div class="track">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="track">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-            </div>
-        </div>
-    </div>
-    -->
-
-    <script src="./index.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>

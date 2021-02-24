@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x:hidden;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.group {
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin: 5px;
+}
+
+.track {
+    font-family: monospace;
+    font-size: 30px;
+    margin-bottom: 5px;
+    width: 300px;
+}
+
+.track {
+    display: flex;
+}
+
+.track input {
+    width: 25px;
+    padding: 5px;
+}
+
+#drumBtns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#drumBtns > div {
+    width: 500px;
+    text-align: center;
+}
+
+#drumBtns button {
+    margin: 10px;
+    padding: 10px;
+    width: 20%;
+    max-width: 100px;
+    background: none;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+}
+
+#controls {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#controls > button {
+    background: none;
+    width: 120px;
+    height: 50px;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#controls img {
+    height: 32px;
+}
+
+#song {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
