@@ -96,7 +96,15 @@ deleteBar = (barIndex) => {
 
 
 document.querySelectorAll(".drumBtn").forEach(button => {
-    button.addEventListener("click", function(){ playSound(this.children[0])})
+    button.addEventListener("click", () => {
+        playSound(button.children[0])
+
+        if (button.classList.contains("pop")) {
+            button.classList.remove("pop")
+            button.offsetHeight
+        }
+        button.classList.add("pop")
+    })
 })
 
 document.getElementById("addBar").addEventListener("click", () => addBar())
