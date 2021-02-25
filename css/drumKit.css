@@ -73,7 +73,7 @@
 
 .cymbol {
     background-color: #ebab34;
-    border: 2px solid #000;
+    border: 2px solid #734f08;
 }
 
 .upright {
@@ -86,7 +86,7 @@
     border-bottom: 6px solid #696866;
     border-left: 1px solid #696866;
     border-right: 1px solid #696866;
-    background-color: red;
+    background-color: #DD352E;
 }
 
 @keyframes pop {
@@ -115,7 +115,7 @@
     height: 25%;
     width: 25%;
     background: none;
-    border: 2px solid #000;
+    border: 2px solid #734f08;
     border-radius: 50%;
     top: 50%;
     left: 50%;

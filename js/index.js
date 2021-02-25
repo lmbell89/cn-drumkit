@@ -20,10 +20,8 @@ const drumAudios = {
     f: document.getElementById("floor")
 }
 
-let beatsPerMinute = 800
-
-
-
+const SPEED = 100
+let forceStop = false
 
 
 const playSound = (audio) => {    
@@ -33,8 +31,13 @@ const playSound = (audio) => {
     audio.play()
 }
 
+const stopPlaying = () => forceStop = true
+
 const playBeatsRecursive = (tracks, index) => {
-    if (index >= tracks[0].length) {
+    if (index >= tracks[0].length || forceStop) {
+        document.getElementById("playBtn").classList.remove("hidden")
+        document.getElementById("stopBtn").classList.add("hidden")
+        forceStop = false
         return
     }
 
@@ -44,14 +47,17 @@ const playBeatsRecursive = (tracks, index) => {
         }
     })
 
-    setTimeout(() => playBeatsRecursive(tracks, index + 1), (2000 * 60 / beatsPerMinute))
+    setTimeout(() => playBeatsRecursive(tracks, index + 1), SPEED)
 }
 
 
 const playSong = () => {
+    document.getElementById("playBtn").classList.add("hidden")
+    document.getElementById("stopBtn").classList.remove("hidden")
+
     const tracks = []
 
-    for (let i = 1; i < 3; i++) {
+    for (let i = 2; i < 4; i++) {
         const track = Array
             .from(document.querySelectorAll(`.group>input:nth-child(${i})`))
             .map(input => (input.value + ".".repeat(16 - input.value.length)).split(""))
@@ -62,24 +68,29 @@ const playSong = () => {
     playBeatsRecursive(tracks, 0)
 }
 
-const addGroup = () => {
-    const bar = document.createElement("div")
-    bar.className = "group"
+const addGroup = (value1="h.h.h.h.h.h.h.h.", value2="k...s...k.k.s...") => {
+    const group = document.createElement("div")
+    group.className = "group"
+
+    const deleteBtn = document.createElement("button")
+    deleteBtn.className = "delete"
+    deleteBtn.addEventListener("click", () => group.remove())
+    group.appendChild(deleteBtn)
 
     const track1 = document.createElement("input")
     track1.maxLength = 16
     track1.type = "text"
     track1.className = "track"
     track1.spellcheck = false
-    track1.value = "h.h.h.h.h.h.h.h." 
+    track1.value = value1
 
     const track2 = track1.cloneNode(false)
-    track2.value = "k...s...k.k.s..."
+    track2.value = value2
 
-    bar.appendChild(track1)
-    bar.appendChild(track2)
+    group.appendChild(track1)
+    group.appendChild(track2)
 
-    document.getElementById("song").appendChild(bar)
+    document.getElementById("song").appendChild(group)
 }
 
 deleteBar = (barIndex) => {
@@ -114,3 +125,12 @@ document.addEventListener("keydown", event => {
 
 document.getElementById("addGroup").addEventListener("click", () => addGroup())
 document.getElementById("playBtn").addEventListener("click", () => playSong())
+document.getElementById("stopBtn").addEventListener("click", () => stopPlaying())
+
+/* CREATES A SAMPLE DRUM SOLO */
+addGroup("ssssssssssssssss", "c.k.c.k.c.k.c.k.")
+addGroup()
+addGroup()
+addGroup()
+addGroup("sssst.t.mmmmf.f.", "k...k...k...k...")
+addGroup("c", "k")

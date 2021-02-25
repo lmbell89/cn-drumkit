@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -17,9 +18,25 @@ button:hover {
 }
 
 .group {
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #ccc;
+    border-radius: 10px;
     margin: 5px;
+}
+
+.delete {
+    height: 24px;
+    width: 24px;
+    background-color: #DD352E;
+    border-radius: 5px;
+    border: none;
+    margin: 0 0 5px 5px;
+    float: right;
+    color: white;
+}
+
+.delete::before {
+    content: "X"
 }
 
 .track {
@@ -36,6 +53,10 @@ button:hover {
 .track input {
     width: 25px;
     padding: 5px;
+}
+
+.hidden {
+    display: none !important;
 }
 
 #drumBtns {
@@ -74,6 +95,9 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background: none;
+    border-radius: 10px;
+    border: 2px solid #ccc;
 }
 
 #controls img {
@@ -84,4 +108,9 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
 }

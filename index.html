@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link rel="icon" href="./img/drums.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/drumKit.css">
@@ -32,13 +34,13 @@
             <audio id="snare" src="./sounds/snare.wav" preload></audio>
         </button>
         <button class="tom upright">
-            <audio id="tom" src="./sounds/tom.mp3" preload></audio>
+            <audio id="tom" src="./sounds/tom5.mp3" preload></audio>
         </button>
         <button class="mid upright">
-            <audio id="mid" src="./sounds/mid.mp3" preload></audio>
+            <audio id="mid" src="./sounds/tom4.wav" preload></audio>
         </button>
         <button class="floor upright">
-            <audio id="floor" src="./sounds/floor.mp3" preload></audio>
+            <audio id="floor" src="./sounds/tom3.wav" preload></audio>
         </button>
     </div>
 
@@ -67,26 +69,28 @@
             </span>
         </button>
         <button id="playBtn">
-            <img src="img/play.png" alt="add">
+            <img src="img/play.png" alt="play">
             <span>
                 Play<br>Song
+            </span>
+        </button>
+        <button id="stopBtn" class="hidden">
+            <img src="img/stop.png" alt="stop">
+            <span>
+                Stop<br>Playing
             </span>
         </button>
     </div>    
 
     <div id="song">
-        <div class="group">
-            <input type="text" class="track" maxlength="16" spellcheck="false" value="h.h.h.h.h.h.h.h.">
-            <input type="text" class="track" maxlength="16" spellcheck="false" value="k...s...k.k.s...">
-        </div>
-        <div class="group">
-            <input type="text" class="track" maxlength="16" spellcheck="false" value="h.h.h.h.h.h.h.h.">
-            <input type="text" class="track" maxlength="16" spellcheck="false" value="k...s...k.k.s...">
-        </div>
     </div>
 
-    <div>Icons made by <a href="https://www.flaticon.com/authors/prettycons" title="prettycons">prettycons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-
+    <footer>
+        Icons made by <a href="https://www.flaticon.com/authors/prettycons" title="prettycons">prettycons</a> 
+        and <a href="https://www.freepik.com" title="Freepik">Freepik</a> 
+        from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    </footer>
+    
     <script src="./js/index.js"></script>
 </body>
 </html>
