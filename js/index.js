@@ -1,12 +1,12 @@
 const drumElements = {
-    hiHat: document.querySelector("#drumKit .hiHat"),
-    crash: document.querySelector("#drumKit .crash"),
-    ride: document.querySelector("#drumKit .ride"),
-    kick: document.querySelector("#drumKit .kick"),
-    snare: document.querySelector("#drumKit .snare"),
-    tom: document.querySelector("#drumKit .tom"),
-    mid: document.querySelector("#drumKit .mid"),
-    floor: document.querySelector("#drumKit .floor")
+    h: document.querySelector("#drumKit .hiHat"),
+    c: document.querySelector("#drumKit .crash"),
+    r: document.querySelector("#drumKit .ride"),
+    k: document.querySelector("#drumKit .kick"),
+    s: document.querySelector("#drumKit .snare"),
+    t: document.querySelector("#drumKit .tom"),
+    m: document.querySelector("#drumKit .mid"),
+    f: document.querySelector("#drumKit .floor")
 }
 
 const drumAudios = {
@@ -42,8 +42,9 @@ const playBeatsRecursive = (tracks, index) => {
     }
 
     tracks.forEach(track => {
-        if (track[index].toLowerCase() in drumAudios) {            
-            playSound(drumAudios[track[index].toLowerCase()])
+        if (track[index].toLowerCase() in drumElements) {     
+            drumElements[track[index].toLowerCase()].click()       
+            //playSound(drumAudios[track[index].toLowerCase()])
         }
     })
 
@@ -117,7 +118,7 @@ document.querySelectorAll("#drumBtns button").forEach(button => {
 })
 
 document.addEventListener("keydown", event => {
-    const key = Object.keys(drumElements).find(el => el.substr(0, 1) === event.key)
+    const key = Object.keys(drumElements).find(el => el === event.key)
     if (key) {
         drumElements[key].click()
     }
