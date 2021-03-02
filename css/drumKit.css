@@ -4,7 +4,10 @@
     max-width: 540px;
     max-height: 360px;
     position: relative;
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
+    background-color: #444;
+    border: 1px solid #ccc;
+    padding: 5px;
 }
 
 #drumKit > button {

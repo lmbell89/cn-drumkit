@@ -14,6 +14,8 @@
 <body>
     <h1>Interactive Drums</h1>
 
+    <div class="text">Click on the drums or use your keyboard to play the drums!</div>
+
     <div id="drumKit">
         <button class="crash cymbol">      
             <audio id="crash" src="./sounds/crash.wav" preload></audio>
@@ -61,35 +63,37 @@
 
     <h2>Compose</h2>
 
+    <div class="text">
+        <p>Use this section to create and play a song
+            Each group contains 16 beats. Enter the keyboard symbol for one of the drums. 
+            Use a dot or a space for a rest
+        </p>
+        <p>Edit the groups below, or delete them and create your own. 
+            Click Play Song when you are finished and the drumkit will play your song.
+        </p>
+    </div>
+
+
     <div id="controls">
         <button id="addGroup">
-            <img src="img/add.png" alt="add">
             <span>
-                Add<br>Group
+                Add Group
             </span>
         </button>
         <button id="playBtn">
-            <img src="img/play.png" alt="play">
             <span>
-                Play<br>Song
+                Play Song
             </span>
         </button>
         <button id="stopBtn" class="hidden">
-            <img src="img/stop.png" alt="stop">
             <span>
-                Stop<br>Playing
+                Stop Playing
             </span>
         </button>
     </div>    
 
     <div id="song">
     </div>
-
-    <footer>
-        Icons made by <a href="https://www.flaticon.com/authors/prettycons" title="prettycons">prettycons</a> 
-        and <a href="https://www.freepik.com" title="Freepik">Freepik</a> 
-        from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-    </footer>
     
     <script src="./js/index.js"></script>
 </body>
