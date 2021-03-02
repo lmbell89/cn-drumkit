@@ -83,12 +83,20 @@ button {
 #drumBtns > div {
     width: 500px;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#drumBtns > div > div {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
 }
 
 #drumBtns button {
     margin: 10px;
     padding: 10px;
-    width: 25%;
+    width: 50%;
     max-width: 100px;
     font-size: 1rem;
 }
